@@ -34,7 +34,7 @@ namespace HACKA.MEIADOIS.UI.Controllers
 
 
 
-        
+
         [HttpPost]
         public ActionResult Dashboard(String query)
         {
@@ -46,45 +46,57 @@ namespace HACKA.MEIADOIS.UI.Controllers
             string melhor1 = "";
             string melhor2 = "";
             string melhor3 = "";
+            string ft_melhor1 = "";
+            string ft_melhor2 = "";
+            string ft_melhor3 = "";
 
+            List<String> melhoresEmpresas;
 
             int cont = 0;
             foreach (Result r in resultados)
             {
+
                 switch (cont)
                 {
                     case 0:
-                        
                         melhor1 = ml.pegarNomeVendedor(r.seller.id);
+                        melhoresEmpresas.Add(melhor1);
+                        ft_melhor1 = r.thumbnail;
                         break;
                     case 1:
                         // pega visão
-                        if (melhor2.Equals(melhor1) || melhor3.Equals(melhor1))
+                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id)))
                         {
-                            cont--;
-                            break;
+                            count--;
                         }
-                        melhor2 = ml.pegarNomeVendedor(r.seller.id);
+                        else
+                        {
+                            melhor2 = ml.pegarNomeVendedor(r.seller.id);
+                            ft_melhor2 = r.thumbnail;
+                        }
                         break;
                     case 2:
-                        if (melhor3.Equals(melhor2) || melhor3.Equals(melhor1))
+                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id)))
                         {
                             cont--;
-                            break;
                         }
-                        melhor3 = ml.pegarNomeVendedor(r.seller.id);
+                        else
+                        {
+                            melhor3 = ml.pegarNomeVendedor(r.seller.id);
+                            ft_melhor3 = r.thumbnail;
+                        }
                         break;
                     default:
                         break;
 
 
                 }
-                
+
                 dResultados.Add(r.price);
                 cont++;
             }
 
-            if(melhor1.Equals("") && melhor2.Equals("") && melhor3.Equals(""))
+            if (melhor1.Equals("") && melhor2.Equals("") && melhor3.Equals(""))
             {
                 melhor1 = "";
                 melhor2 = "";
@@ -96,10 +108,12 @@ namespace HACKA.MEIADOIS.UI.Controllers
             ViewBag.media = dResultados.Average();
 
             ViewBag.melhor1 = melhor1;
-
             ViewBag.melhor2 = melhor2;
             ViewBag.melhor3 = melhor3;
-            
+            ViewBag.ftmelhor1 = ft_melhor1;
+            ViewBag.ftmelhor2 = ft_melhor2;
+            ViewBag.ftmelhor3 = ft_melhor3;
+
             return View();
         }
     }
