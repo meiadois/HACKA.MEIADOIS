@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Dashboard";
+    Layout = null;
 }
 
 @{
@@ -34,7 +35,6 @@
     }
 
 }
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,26 +49,30 @@
     <title> Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="~/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="~/Content/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="~/Content/sb-admin-2.min.css" rel="stylesheet">
     <style>
         .bg-gradient-primary {
-                background-color: #264b94;
+            background-color: #264b94;
             background-image: linear-gradient(180deg, #17a2b8 10%, #38D8A9 100%);
             background-size: cover;
-            }
+        }
 
         .one {
             margin-bottom: 100px;
         }
 
-#search {
-        margin-bottom: 50px;
-    }
+        #search {
+            margin-bottom: 50px;
+        }
+
+        .center {
+            margin: auto;
+        }
     </style>
 
 </head>
@@ -85,10 +89,8 @@
             <div class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
 
-                <img src="Img/logi.png" alt="">
+                <img src="~/Resources/logi.png" alt="">
             </div>
-
-
 
 
             <!-- Divider -->
@@ -104,11 +106,6 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-
-
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -135,8 +132,6 @@
                 </div>
             </li>
 
-
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
@@ -156,19 +151,17 @@
         </ul>
         <!-- End of Sidebar -->
 
-
         <div class="container-fluid">
 
             <!-- Page Heading -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
                 <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-
             </div>
             </br>
-            <div id="search">
+            <div id="search"  class="text-center">
                 <form class="d-none d-sm-inline-block form-inline mr-auto md-3 my-2 my-md-0 mw-100 navbar-search" method="post">
                     <div class="input-group">
-                        <input id="query" name="query" type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        <input id="query" name="query" type="text" class="form-control bg-light border-0 small" placeholder="Pesquise aqui..."
                                aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-info" type="submit">
@@ -191,109 +184,14 @@
 
             </div>
 
-
             <!-- Content Row -->
-            <div class="row one" id="one">
-
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-warning shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Valor Minino</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        @minimo.ToString("F")
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Earnings (Monthly) Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-danger shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Valor Maximo</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">@maximo.ToString("F")</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Earnings (Monthly) Card Example -->
-                <!--div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-info shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                            <div class="row no-gutters align-items-center">
-                              <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                              </div>
-                              <div class="col">
-                                <div class="progress progress-sm mr-2">
-                                  <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div-->
-                <!-- Pending Requests Card Example -->
-                <!--div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-warning shadow h-100 py-2">
-                      <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                          <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                          </div>
-                          <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div-->
-                <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-success shadow h-100 py-2">
-                        <div class="card-body">
-                            <div class="row no-gutters align-items-center">
-                                <div class="col mr-2">
-                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Valor Medio</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">@media.ToString("F")</div>
-                                </div>
-                                <div class="col-auto">
-                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row one center" id="one">
 
                 <!-- Topbar Search -->
-                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                @*<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                     <form class="form-inline mr-auto w-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquise aqui..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -301,75 +199,75 @@
                             </div>
                         </div>
                     </form>
+                </div>*@
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-4 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Menor preço</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">R$@minimo.ToString("F")</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Dropdown - Messages -->
-                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                    <h6 class="dropdown-header">
-                        Message Center
-                    </h6>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
-                            <div class="status-indicator bg-success"></div>
+                <div class="col-xl-4 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Preço médio</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">R$@media.ToString("F")</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="font-weight-bold">
-                            <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
-                            <div class="small text-gray-500">Emily Fowler · 58m</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
-                            <div class="status-indicator"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                            <div class="small text-gray-500">Jae Chun · 1d</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
-                            <div class="status-indicator bg-warning"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
-                            <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-                            <div class="status-indicator bg-success"></div>
-                        </div>
-                        <div>
-                            <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
-                            <div class="small text-gray-500">Chicken the Dog · 2w</div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                    </div>
                 </div>
 
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-4 mb-4">
+                    <div class="card border-left-danger shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Maior preço</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">R$@maximo.ToString("F")</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
-            <div class="col-xl-3 col-md-6 mb-4 list-group">
-                <div class="card border-left shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-0">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action">nomes dos melhores Vendendor </a>
-
-
-                                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor1</a>
-                                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor2</a>
-                                    <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor3</a>
-
+            <!-- Ranking list -->
+            <div class="center">
+                <div class="col-xl-6 mb-4 list-group">
+                    <div class="card border-left shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-0">
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action">Mais relevantes</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor1</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor2</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor3</a>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -377,21 +275,21 @@
 
 
             <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="~/Scripts/jquery.min.js"></script>
+            <script src="~/Scripts/bootstrap.bundle.min.js"></script>
 
             <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="~/Scripts/jquery.easing.min.js"></script>
 
             <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+            <script src="~/Scripts/sb-admin-2.min.js"></script>
 
             <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
-
+            <script src="~/fontawesome/js/all.min.js"></script>
+            <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
             <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
+            <script src="~/Scripts/chart-area-demo.js"></script>
+            <script src="~/Scripts/chart-pie-demo.js"></script>
 
 </body>
 
