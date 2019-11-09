@@ -27,14 +27,25 @@ namespace HACKA.MEIADOIS.UI.Controllers
         {
             MercadoLivre ml = new MercadoLivre();
             List<Result> resultados = ml.ObterResultados();
-            double media = 0.0;
 
+            List<Double> dResultados = new List<double>();
+
+            double media;
             foreach (Result r in resultados)
             {
-                media += r.price;
+                
+                dResultados.Add(r.price);
             }
-            media = media / resultados.Count;
-            ViewBag.media = media;
+
+
+            ViewBag.maximo = dResultados.Max();
+            ViewBag.minimo = dResultados.Min();
+            ViewBag.media = dResultados.Average();
+
+            ViewBag.melhor1 = "Jackson Andrade";
+            ViewBag.melhor2 = "Zenilson Souza";
+            ViewBag.melhor3 = "Gabriel Silva";
+
             return View();
         }
     }
