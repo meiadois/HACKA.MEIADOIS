@@ -23,10 +23,23 @@ namespace HACKA.MEIADOIS.UI.Controllers
         {
             return View();
         }
+
+
+
+        [HttpGet]
         public ActionResult Dashboard()
         {
+            return View();
+        }
+
+
+
+        
+        [HttpPost]
+        public ActionResult Dashboard(String query)
+        {
             MercadoLivre ml = new MercadoLivre();
-            List<Result> resultados = ml.ObterResultados();
+            List<Result> resultados = ml.ObterResultados(query);
 
             List<Double> dResultados = new List<double>();
 
@@ -45,7 +58,7 @@ namespace HACKA.MEIADOIS.UI.Controllers
             ViewBag.melhor1 = "Jackson Andrade";
             ViewBag.melhor2 = "Zenilson Souza";
             ViewBag.melhor3 = "Gabriel Silva";
-
+            
             return View();
         }
     }

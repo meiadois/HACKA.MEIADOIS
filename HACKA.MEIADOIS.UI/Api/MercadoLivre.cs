@@ -9,14 +9,14 @@ namespace HACKA.MEIADOIS.UI.Api
     public class MercadoLivre
     {
 
-        public List<Result> ObterResultados()
+        public List<Result> ObterResultados(String query)
         {
             var client = new RestClient("https://api.mercadolibre.com");
             // client.Authenticator = new HttpBasicAuthenticator(username, password);
-
+            
             var request = new RestRequest("sites/MLB/search?q={busca}", Method.GET);
             request.AddParameter("official_store", "all"); // adds to POST or URL querystring based on Method
-            request.AddUrlSegment("id", "123"); // replaces matching token in request.Resource
+            request.AddUrlSegment("q", query); // replaces matching token in request.Resource
 
             // easily add HTTP Headers
             request.AddHeader("header", "value");
