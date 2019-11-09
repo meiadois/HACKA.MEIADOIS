@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HACKA.MEIADOIS.UI.Models
 {
+    [Table(nameof(PrecoProduto))]
     public class PrecoProduto
     {
+        [Key]
         public int Id { get; set; }
 
-        public string NomeProduto { get; set; }
+        public int IdProduto { get; set; }
 
-        public string CategoriaProduto { get; set; }
-
+        [Column("preco_compra", TypeName = "decimal")]
         public double PrecoCompra { get; set; }
+
+        [Column("data_compra", TypeName = "date")]
+        public DateTime DataCompra { get; set; }
 
     }
 }

@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HACKA.MEIADOIS.UI.Models
 {
+    [Table(nameof(Historico))]
     public class Historico
     {
+        [Key]
         public int Id { get; set; }
 
+        [Column("produto_id")]
         public int ProdutoId { get; set; }
 
-        public string NomeProduto { get; set; }
+        [Column("preco_produto", TypeName = "decimal")]
+        public float PrecoProduto { get; set; }
 
-        public string CategoriaProduto { get; set; }
-
-        public string PrecoProduto { get; set; }
-
+        [Column("data_registro", TypeName = "date")]
         public DateTime DataRegistro { get; set; }
     }
 }
