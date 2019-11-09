@@ -7,13 +7,13 @@ namespace HACKA.MEIADOIS.UI.Models
 {
     public class Compra
     {
-        public int CompraId { get; set; }
+        public int Id { get; set; }
 
         public DateTime Data { get; set; }
 
-        virtual public int ForncedorId { get; set; }
+        virtual public int FornecedorId { get; set; }
 
-        public ICollection<Fornecedor> Fornecedor { get; set; }
+        public ICollection<Fornecedor> Fornecedores { get; set; }
 
     }
 }

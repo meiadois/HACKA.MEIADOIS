@@ -7,12 +7,12 @@ namespace HACKA.MEIADOIS.UI.Models
 {
     public class Produto
     {
-        public int ProdutoId { get; set; }
+        public int Id { get; set; }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
 
-        public string categoria { get; set; }
+        public string Categoria { get; set; }
 
-        public double preço_medio { get; set; }
+        public double PrecoMedio { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HACKA.MEIADOIS.UI.Models
 {
-    public class Usuario_CNPJ
+    public class UsuarioCNPJ
     {
         public int Id { get; set; }
         public string CNPJ { get; set; }
