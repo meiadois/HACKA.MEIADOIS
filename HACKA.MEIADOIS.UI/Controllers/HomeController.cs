@@ -103,9 +103,12 @@ namespace HACKA.MEIADOIS.UI.Controllers
                 melhor3 = "";
             }
 
-            ViewBag.maximo = dResultados.Max();
-            ViewBag.minimo = dResultados.Min();
-            ViewBag.media = dResultados.Average();
+            if(dResultados.Count != 0)
+            {
+                ViewBag.maximo = dResultados.Max();
+                ViewBag.minimo = dResultados.Min();
+                ViewBag.media = dResultados.Average();
+            }
 
             ViewBag.melhor1 = melhor1;
             ViewBag.melhor2 = melhor2;

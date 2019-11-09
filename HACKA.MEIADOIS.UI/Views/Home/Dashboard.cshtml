@@ -1,4 +1,5 @@
 ﻿
+@using System.Threading
 @{
     ViewBag.Title = "Dashboard";
     Layout = null;
@@ -274,9 +275,22 @@
                                 <div class="col mr-0">
                                     <div class="list-group">
                                         <a href="#" class="list-group-item list-group-item-action">Mais relevantes</a>
-                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor1</a>
-                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor2</a>
-                                        <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor3</a>
+                                        @if (melhor1.Equals("") == false)
+                                        {
+                                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor1</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">Não existem fornecedores mais relevantes</a>
+                                        }
+                                        @if (melhor2.Equals("") == false)
+                                        {
+                                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor2</a>
+                                        }
+                                        @if (melhor3.Equals("") == false)
+                                        {
+                                            <a href="#" class="list-group-item list-group-item-action list-group-item-success">@melhor3</a>
+                                        }
                                     </div>
                                 </div>
                             </div>
