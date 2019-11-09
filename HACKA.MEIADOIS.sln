@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HACKA.MEIADOIS.UI", "HACKA.MEIADOIS.UI\HACKA.MEIADOIS.UI.csproj", "{98609DA9-7591-4359-9FE3-714A0F5A719B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98609DA9-7591-4359-9FE3-714A0F5A719B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98609DA9-7591-4359-9FE3-714A0F5A719B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98609DA9-7591-4359-9FE3-714A0F5A719B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98609DA9-7591-4359-9FE3-714A0F5A719B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2F523CA-28A5-4CEA-A5DB-0E40CA34E4F5}
+	EndGlobalSection
+EndGlobal
