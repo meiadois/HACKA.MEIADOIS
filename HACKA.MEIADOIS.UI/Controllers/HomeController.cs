@@ -50,7 +50,7 @@ namespace HACKA.MEIADOIS.UI.Controllers
             string ft_melhor2 = "";
             string ft_melhor3 = "";
 
-            List<String> melhoresEmpresas;
+            List<String> melhoresEmpresas = new List<String>();
 
             int cont = 0;
             foreach (Result r in resultados)
@@ -65,31 +65,31 @@ namespace HACKA.MEIADOIS.UI.Controllers
                         break;
                     case 1:
                         // pega visão
-                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id)))
+                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id).Contains))
                         {
-                            count--;
+                            cont--;
                         }
                         else
                         {
                             melhor2 = ml.pegarNomeVendedor(r.seller.id);
+                            melhoresEmpresas.Add(melhor2);
                             ft_melhor2 = r.thumbnail;
                         }
                         break;
                     case 2:
-                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id)))
+                        if (melhoresEmpresas.Any(ml.pegarNomeVendedor(r.seller.id).Contains))
                         {
                             cont--;
                         }
                         else
                         {
                             melhor3 = ml.pegarNomeVendedor(r.seller.id);
+                            melhoresEmpresas.Add(melhor3);
                             ft_melhor3 = r.thumbnail;
                         }
                         break;
                     default:
                         break;
-
-
                 }
 
                 dResultados.Add(r.price);
