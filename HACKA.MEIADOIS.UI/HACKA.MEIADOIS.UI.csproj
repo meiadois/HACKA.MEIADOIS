@@ -53,6 +53,9 @@
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -124,6 +127,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\MercadoLivre.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -145,6 +149,7 @@
     <Compile Include="Models\Historico.cs" />
     <Compile Include="Models\PrecoProduto.cs" />
     <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ResultadoML.cs" />
     <Compile Include="Models\UsuarioCNPJ.cs" />
     <Compile Include="Models\UsuarioCPF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -220,6 +225,7 @@
     <Content Include="Views\Compras\Details.cshtml" />
     <Content Include="Views\Compras\Edit.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -22,5 +22,9 @@ namespace HACKA.MEIADOIS.UI.Controllers
         {
             return View();
         }
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
     }
 }
